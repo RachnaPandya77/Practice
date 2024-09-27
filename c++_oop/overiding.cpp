@@ -10,12 +10,13 @@ public:
     }
 };
 
-
-class child : public parent{
+class child : public parent
+{
 public:
-    void getinfo(){
+    void getinfo()
+    {
         cout << "child class";
-        }
+    }
 };
 
 int main()
