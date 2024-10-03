@@ -1,21 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class print{
+class print
+{
 public:
-    void show(int x){
+    void show(int x)
+    {
         cout << "int: " << x << endl;
-            }
-
-    void show(char ch){
-        cout << "char: " << ch << endl;
     }
 
+    void show(char ch)
+    {
+        cout << "char: " << ch << endl;
+    }
 };
 
-int main(){
+int main()
+{
     print p1;
-    p1.show(101); //call fun
-    
+    p1.show(101); // call fun
+
     return 0;
 }
