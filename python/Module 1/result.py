@@ -1,3 +1,5 @@
+# Write a Python program to calculate grades based on percentage using if-else ladder
+
 C = int(input("Mark of C: "))
 Cpp = int(input("Mark of Cpp: "))
 python = int(input("Mark of python: "))

@@ -1,3 +1,7 @@
-print("hello")
-print("python")
+
+str = "python"
+print(len(str))
+
+a = 'hello'
+print(a.count('l'))
 
