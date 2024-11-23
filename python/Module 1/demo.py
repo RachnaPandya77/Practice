@@ -1,7 +1,9 @@
+# without end function 
 
-str = "python"
-print(len(str))
+print("Python")
+print("Programing")
 
-a = 'hello'
-print(a.count('l'))
+# without end function 
 
+print("Python",end=" ")
+print("Programing")
