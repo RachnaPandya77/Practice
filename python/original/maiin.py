@@ -15,10 +15,10 @@ def main():
             m.addproduct(pid, name, price, qty)
             
         elif action == '2':  # Update
-            pid = input("Product ID to update: ")
-            name = input("New Name (or skip): ")
-            price = input("New Price (or skip): ")
-            qty = input("New Quantity (or skip): ")
+            pid = input("Product ID  update: ")
+            name = input("New Name : ")
+            price = input("New Price : ")
+            qty = input("New Quantity : ")
 
             m.updateproduct(pid, name , int(price) , int(qty))
            
@@ -32,6 +32,9 @@ def main():
            
         else:
             print("Invalid action")
+
+    else:
+        print("Invalid role")
 
     
 
