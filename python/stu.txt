@@ -1,0 +1,9 @@
+name:hp
+Age:22
+city:rjkt
+
+
+name:ruchi
+Age:25
+city:rajkot
+
