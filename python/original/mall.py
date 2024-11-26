@@ -14,4 +14,6 @@ def updateproduct(pid, name, price, quantity):
 def deleteproduct(pid):
     if pid in products:
         print(f"Product deleted: {products[pid]}")  
-        del products[pid]    
+        del products[pid]  
+
+  
