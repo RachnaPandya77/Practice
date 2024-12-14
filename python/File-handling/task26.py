@@ -2,7 +2,7 @@ import random
 import datetime
 
 f1=open('file3.txt','a')
-#x = int(input("enter data: "))
+x = int(input("enter data: "))
 for i in range:
     created=datetime.datetime.now()
     id=random.randint(1000,9999)
