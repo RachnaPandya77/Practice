@@ -8,4 +8,4 @@ class studinfo(models.Model):
     email = models.EmailField()
     dob = models.DateField()
     mobile = models.BigIntegerField()
-    address = models.TextField(blank=True, null=True) 
+    address = models.TextField() 
