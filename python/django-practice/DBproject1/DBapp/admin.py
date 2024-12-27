@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import studinfo
 
 # Register your models here.
-class stud_data(admin.ModelAdmin):
-    ordering = ['id']
-    list_display = ['id','name','city','email','dob','mobile','address']
+class studData(admin.ModelAdmin):
+    ordering=['id']
+    list_display=['id','name','city','mobile','email','dob','address']
 
-admin.site.register(studinfo,stud_data)
+admin.site.register(studinfo,studData)
