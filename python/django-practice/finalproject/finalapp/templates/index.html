@@ -22,7 +22,7 @@
     />
   </head>
 
-  <body style="background-color: rgb(254, 254, 254)">
+  <body>
     <!--Navbar start-->
     <nav
       class="navbar navbar-expand-lg"
@@ -100,6 +100,7 @@
       </div>
     </nav>
     <!--Navbar end-->
+    <h1>This Is home Page</h1>
 
     <!-- Modal -->
     <div
@@ -121,13 +122,15 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form method="post">
+              {% csrf_token %}
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"
                   >Email / Username</label
                 >
                 <input
                   type="email"
+                  name="username"
                   class="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
@@ -142,6 +145,7 @@
                 >
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   id="exampleInputPassword1"
                 />
