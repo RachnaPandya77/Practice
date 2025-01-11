@@ -87,6 +87,7 @@
               Search
             </button>
           </form>
+          {% if user is none %}
           <button
             class="btn btn-warning mx-2"
             data-bs-toggle="modal"
@@ -94,7 +95,10 @@
           >
             Login
           </button>
-          <a href="/signup" class="btn btn-primary">Signup</a>
+          <a href="/signup" class="btn btn-primary mx-2">Signup</a>
+          {% else %}
+          <a href="/userlogout" class="btn btn-danger">Logout</a>
+          {% endif %}
         </div>
       </div>
     </nav>
