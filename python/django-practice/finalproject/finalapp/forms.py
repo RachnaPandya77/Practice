@@ -5,4 +5,9 @@ class signupform(forms.ModelForm):
     class Meta:
         model=usersignup
         fields='__all__'
+
+class updateForm(forms.ModelForm):
+    class Meta:
+        model=usersignup
+        fields=['firstname','lastname','username','password','state','city','mobile']
     

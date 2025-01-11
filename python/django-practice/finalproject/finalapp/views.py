@@ -6,18 +6,23 @@ from django.contrib.auth import logout
 
 def index(request):
     msg=""
+    user=request.session.get('user')
     if request.method=='POST':
         unm=request.POST['username']
         pas=request.POST['password']
+
         user=usersignup.objects.filter(username=unm,password=pas)
+        userid=usersignup.objects.get(username=unm)
+        print("UserID:",userid.id)
         if user:
-            print("Login successfullly")#if truee
-            request.session['user']=unm
+            print("All good, you're logged in")#if truee
+            request.session['user']=unm #session
+            request.session['userid']=userid.id
             return redirect('notes')
         else:
-            print("Error , login fail")
-            msg="Error, login fail"
-    return render(request,'index.html',{'msg':msg})
+            print("Login attempt unsuccessful")
+            msg="Login attempt unsuccessful"
+    return render(request,'index.html',{'msg':msg, 'user':user})
 
 def signup(request): 
     msg=""
@@ -42,7 +47,20 @@ def notes(request):
     return render(request,'notes.html',{'user':user})
 
 def profile(request):
-    return render(request,'profile.html')
+    user=request.session.get('user')
+    userid=request.session.get('userid')
+    cid=usersignup.objects.get(id=userid)
+    print("Current user ID:",cid)
+    if request.method=='POST':
+        updateReq=updateForm(request.POST,instance=cid)
+        if updateReq.is_valid():
+            updateReq.save()
+            request.session.delete()
+            return redirect('/')
+        else:
+            print(updateReq.errors)
+            msg="Error!Something went wrong...."
+    return render(request,'profile.html',{'user':user,'cid':cid})
 
 def userlogout(request):
     logout(request)
