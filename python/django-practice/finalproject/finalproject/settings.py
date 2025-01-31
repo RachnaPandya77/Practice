@@ -124,6 +124,10 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 
+#for live
+#STATIC_ROOT = 'BASE_DIR/ 'Newstatic'
+
+#for ofline
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
@@ -135,7 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email Confing Settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = "smtp.gmail.com"      
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "workrp94@gmail.com"
