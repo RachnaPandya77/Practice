@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'finalapp',
 ]
-
+                                                      
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -143,7 +143,7 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "workrp94@gmail.com"
-EMAIL_HOST_PASSWORD = "ndls hjxo ktgn anoo"
+EMAIL_HOST_PASSWORD = "rayg fwmu lwpi ypfc"
 
 
 # Jazzmin Settings
@@ -165,7 +165,7 @@ JAZZMIN_SETTINGS = {
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
     "site_icon": None,
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the QuickNote",
+    "welcome_sign": "Welcome to the QuickNotes",
     # Copyright on the footer
     "copyright": "TOPS Technologies Pvt. Ltd",
     # List of model admins to search from the search bar, search bar omitted if excluded

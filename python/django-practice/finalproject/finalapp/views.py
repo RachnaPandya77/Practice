@@ -3,6 +3,7 @@ from .forms import *
 from django.contrib.auth import logout
 from django.core.mail import send_mail
 from finalproject import settings
+import random
 
 # Create your views here.
 
@@ -31,8 +32,25 @@ def signup(request):
     if request.method=='POST':
         newuser=signupform(request.POST)
         if newuser.is_valid():
+
+            #OTP sending 
+            global otp
+            otp=random.randint(111111,999999)
+            
+            sub="Your one time password"
+            msg=f"Hello User\n\nThanks for registration with us\n\nFor account verification, Your one time password is : {otp}\n\nThanks!\nQuickNotes\nTops Technologies Pvt.Ltd"
+            from_email=settings.EMAIL_HOST_USER
+            to_email=[request.POST["username"]]
+
+
+            send_mail(
+                    subject=sub,
+                    message=msg,
+                    from_email=from_email,
+                    recipient_list=to_email,
+                )
             newuser.save()
-            return redirect('/')
+            return redirect("otpverify")
         else:
             print(newuser.errors)
             msg="Error , something went wrong"
@@ -53,9 +71,10 @@ def contact(request):
             # Email Sending Code
             send_mail(
                 subject="Thankyou!",
-                message=f"Hello User!\n\nThank you for connecting with us!\nWe will contact you.\n\nThanks & Regards!\nRachna Pandya\n+91 9999999998 | workrp@gmail.com",
+                message=f"Hello User!\n\nThank you for connecting with us!\nWe will contact you.\n\nThanks & Regards!\nRachna Pandya\n+91 8320085266 | workrp@gmail.com",
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=['ruchipandya20@gmail.com'],
+                #recipient_list=['ruchipandya20@gmail.com'],
+                recipient_list=[request.POST['email']]
             )
 
         else:
@@ -95,3 +114,16 @@ def profile(request):
 def userlogout(request):
     logout(request)
     return redirect('/')
+
+def otpverify(request):
+    msg = ""
+    global otp
+    # print("OTP", otp)
+    if request.method == "POST":
+        if request.POST["otp"] == str(otp):
+            print("Verification done!")
+            return redirect("/")
+        else:
+            print("Error!Invalid OTP")
+            msg = "Error!Invalid OTP"
+    return render(request, "otpverify.html", {"msg": msg})
