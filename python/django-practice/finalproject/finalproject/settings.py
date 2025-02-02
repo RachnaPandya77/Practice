@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l@xgogjtk27f#mn%v=f0(f0nfv-g2shlz+$a%78y8s5q$qmcsu
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,12 +125,12 @@ USE_TZ = False
 STATIC_URL = 'static/'
 
 #for live
-#STATIC_ROOT = 'BASE_DIR/ 'Newstatic'
+STATIC_ROOT = BASE_DIR/ 'Newstatic'
 
 #for ofline
-STATICFILES_DIRS = [
+'''STATICFILES_DIRS = [
     BASE_DIR / "static",
-]
+]'''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
