@@ -58,7 +58,7 @@ def signup(request):
                         recipient_list=to_email,
                     )
                 #sms OTP
-                """url = "https://www.fast2sms.com/dev/bulkV2"
+                url = "https://www.fast2sms.com/dev/bulkV2"
 
                 querystring = {
                     "authorization": "Gf0Hrw7gb3vu5WRioPxXYLcKlUOBZtsedyNnJF4pQ8S6ACmTEIOBLEbA05xUJw9XQD6YjGyieIn8dkM7",
@@ -71,7 +71,7 @@ def signup(request):
                     "GET", url, headers=headers, params=querystring
                 ) 
 
-                print(response.text)"""
+                print(response.text)
             newuser.save()
             return redirect("otpverify")
         else:
